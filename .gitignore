@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.env
+.venv/
+env/
+venv/
+
+# Text/paper files
+*.txt
+
+# PDFs
+*.pdf
+
+# Verification scripts
+VERIFICACION_DATOS_IMPUTADOS.py
+
+# Quick start / extra docs
+QUICK_START_DATOS_IMPUTADOS.md
+README_DRO_Notebook.md
+
+# Excluded notebooks and docs
+DRO_correccion.ipynb
+Datos.ipynb
+README.md
+
+# Optional spreadsheet inputs
+Canasta_ICAP.xlsx
+~$*.xlsx
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Results / outputs (can be regenerated)
+dro_results/
+dro_results_rolling/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
