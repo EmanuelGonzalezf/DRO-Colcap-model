@@ -11,6 +11,8 @@ All models use Wasserstein distance metric with p-norm.
 Dependencies: gurobipy, numpy, scipy
 """
 
+from xml.parsers.expat import model
+
 import numpy as np
 from scipy.linalg import cholesky
 import gurobipy as gp
@@ -427,6 +429,8 @@ class DROWassersteinCVaR_2:
         """Build the Gurobi SOCP model for 2-WDRO-CVaR."""
         model = gp.Model("DRO_CVaR_2WDRO")
         model.Params.OutputFlag = 0
+        model.Params.TimeLimit = 120
+
         
         # Variables
         w = model.addMVar(self.m, name="w", lb=0.0 if not self.short_selling else -GRB.INFINITY)
@@ -443,28 +447,34 @@ class DROWassersteinCVaR_2:
         lp_z   = model.addVar(lb=0.0,           name="lp_z")   # λ + z
         lm_z   = model.addVar(lb=-GRB.INFINITY, name="lm_z")   # λ - z
         norm_w = model.addVar(lb=0.0,           name="norm_w")
-        ws_vars = [model.addVar(lb=-GRB.INFINITY, name=f"ws_{j}") for j in range(self.m)]  # 2*w[j]
-        model.update()  # commit variables so getVarByName is available
-        w_vars = [model.getVarByName(f"w[{j}]") for j in range(self.m)]
+        ws     = model.addMVar(self.m, lb=-GRB.INFINITY, name="ws")  # 2*w (vectorized)
 
         # Constraint 1: sum(w) = 1
         model.addConstr(w.sum() == 1, name="budget")
 
+        # Cache matrix-vector product (computed once, reused in epigraph constraints)
+        returns_w = self.returns @ w
+
         # Constraint 2: Per-sample epigraph constraints (vectorized over N samples)
-        model.addConstr((self.a1**2/4.0)*z + self.a1*(self.returns @ w) + self.b1*tau <= s,
+        model.addConstr((self.a1**2/4.0)*z + self.a1*returns_w + self.b1*tau <= s,
                         name="epi1")
-        model.addConstr((self.a2**2/4.0)*z + self.a2*(self.returns @ w) + self.b2*tau <= s,
-                        name="epi2")
+        # a2 = 0 → constraint simplifies to: b2*tau <= s
+        if self.a2 != 0.0:
+            model.addConstr((self.a2**2 / 4.0) * z + self.a2 * returns_w + self.b2 * tau <= s, name="epi2")
+        else:
+            model.addConstr(self.b2 * tau <= s, name="epi2")
 
         # Constraint 3: Rotated cone ||w||² ≤ λ*z via Lorentz: ||[2w; λ-z]||_2 ≤ λ+z
-        model.addConstr(lp_z == lambda_var + z, name="lpz_def")
-        model.addConstr(lm_z == lambda_var - z, name="lmz_def")
-        for j in range(self.m):
-            model.addConstr(ws_vars[j] == 2.0 * w_vars[j], name=f"ws_{j}_def")
-        model.addGenConstrNorm(lp_z, ws_vars + [lm_z], 2.0, name="rotated_cone")
-
+        #model.addConstr(lp_z == lambda_var + z, name="lpz_def")
+        #model.addConstr(lm_z == lambda_var - z, name="lmz_def")
+        #model.addConstr(ws == 2.0 * w, name="ws_def")  # vectorized, replaces element-wise loop
+        #model.addGenConstrNorm(lp_z, list(ws) + [lm_z], 2.0, name="rotated_cone")
+        
+        # Constraint 3: Rotated cone equivalent in quadratic form ||w||^2 <= λ*z
+        model.addQConstr(w @ w <= lambda_var * z, name="rotated_cone_qc")        
+        
         # Constraint 4: Robust return  mean^T w - ε*||w||_2 ≥ μ
-        model.addGenConstrNorm(norm_w, w_vars, 2.0, name="norm_w_def")
+        model.addGenConstrNorm(norm_w, list(w), 2.0, name="norm_w_def")
         xi_mean = np.mean(self.returns, axis=0)
         model.addConstr(xi_mean @ w - self.epsilon * norm_w >= self.target_return,
                         name="robust_return")
