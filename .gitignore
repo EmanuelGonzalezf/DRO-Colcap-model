@@ -13,7 +13,7 @@ venv/
 
 # PDFs
 *.pdf
-
+*.pptx
 # Verification scripts
 VERIFICACION_DATOS_IMPUTADOS.py
 
@@ -25,6 +25,8 @@ README_DRO_Notebook.md
 DRO_correccion.ipynb
 Datos.ipynb
 README.md
+Mini_2WDRO_CVaR_Debug.ipynb
+*.m
 
 # Optional spreadsheet inputs
 Canasta_ICAP.xlsx

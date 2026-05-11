@@ -21,6 +21,46 @@ from typing import Dict, Tuple, Optional
 import warnings
 
 
+# ============================================================================
+# Helper: Mapeo de Estados de Gurobi a Descriptores Legibles
+# ============================================================================
+
+def _get_gurobi_status_string(status_code: int) -> str:
+    """
+    Traduce el código de estado de Gurobi a una descripción legible.
+    
+    Parameters
+    ----------
+    status_code : int
+        Valor de model.Status desde Gurobi
+    
+    Returns
+    -------
+    str
+        Descripción del estado
+    """
+    status_map = {
+        1: 'loaded',              # No se ha optimizado
+        2: 'optimal',             # Solución óptima encontrada
+        3: 'infeasible',          # Modelo infactible
+        4: 'inf_or_unbd',         # Infactible o no acotado
+        5: 'unbounded',           # Modelo no acotado
+        6: 'cutoff',              # Objetivo alcanzó cutoff
+        7: 'iteration_limit',     # Límite de iteraciones alcanzado
+        8: 'node_limit',          # Límite de nodos alcanzado
+        9: 'time_limit',          # Límite de tiempo alcanzado
+        10: 'solution_limit',     # Límite de soluciones alcanzado
+        11: 'interrupted',        # Proceso interrumpido por usuario
+        12: 'numeric',            # Problemas numéricos detectados
+        13: 'suboptimal',         # Solución encontrada pero no óptima certificada
+        14: 'in_progress',        # Optimización en curso
+        15: 'user_obj_limit',     # Límite de objetivo del usuario alcanzado
+        16: 'work_limit',         # Límite de trabajo alcanzado
+        17: 'memory_limit',       # Límite de memoria alcanzado
+    }
+    return status_map.get(status_code, f'unknown_status_{status_code}')
+
+
 class DROWassersteinMarkowitz:
     """
     2-WDRO-Markowitz (Mean-Variance) Portfolio Optimization
@@ -110,6 +150,9 @@ class DROWassersteinMarkowitz:
         t = model.addVar(name="t", lb=0.0)  # Epigraph for variance
         r = model.addVar(name="r", lb=0.0)  # Epigraph for norm
         
+
+
+
         # Objective: minimize t + ε*r
         model.setObjective(t + self.epsilon * r, GRB.MINIMIZE)
         
@@ -171,20 +214,27 @@ class DROWassersteinMarkowitz:
                 'expected_return': self.mean @ weights,
                 'obj_value': model.ObjVal,
                 'status': 'optimal',
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
                 'sharpe': (self.mean @ weights) / variance if variance > 0 else 0,
             }
         elif model.Status == GRB.INFEASIBLE:
             return {
                 'status': 'infeasible',
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
                 'error': 'Problem is infeasible'
             }
         else:
+            status_str = _get_gurobi_status_string(model.Status)
             return {
-                'status': 'error',
+                'status': status_str,
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
-                'error': f'Solver status: {model.Status}'
+                'error': f'Solver terminated with status: {status_str} (code {model.Status})'
             }
 
 
@@ -343,20 +393,27 @@ class DROWassersteinCVaR_1:
                 'cvar': self.tau.X,  # Approximate CVaR
                 'obj_value': model.ObjVal,
                 'status': 'optimal',
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
                 'sharpe': mean_ret / std_dev if std_dev > 0 else 0,
             }
         elif model.Status == GRB.INFEASIBLE:
             return {
                 'status': 'infeasible',
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
                 'error': 'Problem is infeasible'
             }
         else:
+            status_str = _get_gurobi_status_string(model.Status)
             return {
-                'status': 'error',
+                'status': status_str,
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
-                'error': f'Solver status: {model.Status}'
+                'error': f'Solver terminated with status: {status_str} (code {model.Status})'
             }
 
 
@@ -430,13 +487,14 @@ class DROWassersteinCVaR_2:
         model = gp.Model("DRO_CVaR_2WDRO")
         model.Params.OutputFlag = 0
         model.Params.TimeLimit = 120
-
+        model.Params.DualReductions = 0
         
         # Variables
         w = model.addMVar(self.m, name="w", lb=0.0 if not self.short_selling else -GRB.INFINITY)
         tau = model.addVar(name="tau", lb=-GRB.INFINITY)
         lambda_var = model.addVar(name="lambda", lb=0.0)
-        s = model.addMVar(self.N, name="s", lb=-GRB.INFINITY)
+        s = model.addMVar(self.N, name="s", lb=0.0)  
+        #s = model.addMVar(self.N, name="s", lb=-GRB.INFINITY) Mucho cuidado
         z = model.addVar(name="z", lb=0.0)  # Auxiliary variable for rotated cone
         
         # Objective: minimize λ*ε² + (1/N)*sum(s_i)
@@ -459,22 +517,35 @@ class DROWassersteinCVaR_2:
         model.addConstr((self.a1**2/4.0)*z + self.a1*returns_w + self.b1*tau <= s,
                         name="epi1")
         # a2 = 0 → constraint simplifies to: b2*tau <= s
-        if self.a2 != 0.0:
-            model.addConstr((self.a2**2 / 4.0) * z + self.a2 * returns_w + self.b2 * tau <= s, name="epi2")
-        else:
-            model.addConstr(self.b2 * tau <= s, name="epi2")
+        model.addConstrs(
+            (
+                (self.a1**2 / 4.0) * z
+                + self.a1 * returns_w[i]
+                + self.b1 * tau
+                <= s[i]
+                for i in range(self.N)
+            ),
+            name="epi1"
+        )
 
         # Constraint 3: Rotated cone ||w||² ≤ λ*z via Lorentz: ||[2w; λ-z]||_2 ≤ λ+z
-        #model.addConstr(lp_z == lambda_var + z, name="lpz_def")
-        #model.addConstr(lm_z == lambda_var - z, name="lmz_def")
-        #model.addConstr(ws == 2.0 * w, name="ws_def")  # vectorized, replaces element-wise loop
-        #model.addGenConstrNorm(lp_z, list(ws) + [lm_z], 2.0, name="rotated_cone")
+        model.addConstr(lp_z == lambda_var + z, name="lpz_def")
+        model.addConstr(lm_z == lambda_var - z, name="lmz_def")
+        model.addConstr(ws == 2.0 * w, name="ws_def")  # vectorized, replaces element-wise loop
+        model.addGenConstrNorm(lp_z, list(ws) + [lm_z], 2.0, name="rotated_cone")
         
         # Constraint 3: Rotated cone equivalent in quadratic form ||w||^2 <= λ*z
-        model.addQConstr(w @ w <= lambda_var * z, name="rotated_cone_qc")        
+        #model.addQConstr(gp.quicksum(w[i]*w[i] for i in range(self.m))<= lambda_var * z,
+         #   name="rotated_cone_qc"
+        #)       
         
         # Constraint 4: Robust return  mean^T w - ε*||w||_2 ≥ μ
-        model.addGenConstrNorm(norm_w, list(w), 2.0, name="norm_w_def")
+        model.addGenConstrNorm(
+            norm_w,
+            [w[i] for i in range(self.m)],
+            2.0,
+            name="norm_w_def"
+        )
         xi_mean = np.mean(self.returns, axis=0)
         model.addConstr(xi_mean @ w - self.epsilon * norm_w >= self.target_return,
                         name="robust_return")
@@ -511,21 +582,29 @@ class DROWassersteinCVaR_2:
                 'cvar': self.tau.X,
                 'obj_value': model.ObjVal,
                 'status': 'optimal',
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
                 'sharpe': mean_ret / std_dev if std_dev > 0 else 0,
             }
         elif model.Status == GRB.INFEASIBLE:
             return {
                 'status': 'infeasible',
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
                 'error': 'Problem is infeasible'
             }
         else:
+            status_str = _get_gurobi_status_string(model.Status)
             return {
-                'status': 'error',
+                'status': status_str,
+                'status_code': model.Status,
+                'status_description': _get_gurobi_status_string(model.Status),
                 'solve_time': self.solve_time,
-                'error': f'Solver status: {model.Status}'
+                'error': f'Solver terminated with status: {status_str} (code {model.Status})'
             }
+
 
 
 # ============================================================================
@@ -642,7 +721,7 @@ class EqualWeight:
         weights = np.ones(self.m) / self.m
         return {
             'weights': weights,
-            'status': 'analytical',
+            'status': 'Optimal',
             'solve_time': 0.0,
         }
 
