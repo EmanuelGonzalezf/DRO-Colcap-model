@@ -486,7 +486,7 @@ class DROWassersteinCVaR_2:
         """Build the Gurobi SOCP model for 2-WDRO-CVaR."""
         model = gp.Model("DRO_CVaR_2WDRO")
         model.Params.OutputFlag = 0
-        model.Params.TimeLimit = 120
+        model.Params.TimeLimit = 60
         model.Params.DualReductions = 0
         
         # Variables
@@ -721,7 +721,7 @@ class EqualWeight:
         weights = np.ones(self.m) / self.m
         return {
             'weights': weights,
-            'status': 'Optimal',
+            'status': 'optimal',
             'solve_time': 0.0,
         }
 
