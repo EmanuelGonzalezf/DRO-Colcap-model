@@ -1,0 +1,281 @@
+model,step,val_start,status,status_code,status_description
+SAA-Markowitz,533,2023-03-03,failed,-1,desconocido
+SAA-Markowitz,534,2023-03-06,failed,-1,desconocido
+SAA-Markowitz,535,2023-03-07,failed,-1,desconocido
+SAA-Markowitz,536,2023-03-08,failed,-1,desconocido
+SAA-Markowitz,581,2023-05-16,failed,-1,desconocido
+SAA-Markowitz,582,2023-05-17,failed,-1,desconocido
+SAA-Markowitz,583,2023-05-18,failed,-1,desconocido
+SAA-Markowitz,586,2023-05-24,failed,-1,desconocido
+SAA-Markowitz,587,2023-05-25,failed,-1,desconocido
+SAA-Markowitz,590,2023-05-30,failed,-1,desconocido
+SAA-Markowitz,591,2023-05-31,failed,-1,desconocido
+SAA-Markowitz,592,2023-06-01,failed,-1,desconocido
+SAA-Markowitz,593,2023-06-02,failed,-1,desconocido
+SAA-Markowitz,594,2023-06-05,failed,-1,desconocido
+SAA-Markowitz,595,2023-06-06,failed,-1,desconocido
+SAA-Markowitz,596,2023-06-07,failed,-1,desconocido
+SAA-Markowitz,597,2023-06-08,failed,-1,desconocido
+SAA-Markowitz,598,2023-06-09,failed,-1,desconocido
+SAA-Markowitz,599,2023-06-13,failed,-1,desconocido
+SAA-Markowitz,600,2023-06-14,failed,-1,desconocido
+SAA-Markowitz,601,2023-06-15,failed,-1,desconocido
+SAA-Markowitz,602,2023-06-16,failed,-1,desconocido
+SAA-Markowitz,603,2023-06-20,failed,-1,desconocido
+SAA-Markowitz,604,2023-06-21,failed,-1,desconocido
+SAA-Markowitz,605,2023-06-22,failed,-1,desconocido
+SAA-Markowitz,607,2023-06-26,failed,-1,desconocido
+SAA-Markowitz,611,2023-06-30,failed,-1,desconocido
+SAA-Markowitz,656,2023-09-07,failed,-1,desconocido
+2-WDRO-Markowitz (eps=0.50),533,2023-03-03,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),534,2023-03-06,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),535,2023-03-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),536,2023-03-08,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),581,2023-05-16,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),582,2023-05-17,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),583,2023-05-18,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),586,2023-05-24,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),587,2023-05-25,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),590,2023-05-30,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),591,2023-05-31,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),592,2023-06-01,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),593,2023-06-02,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),594,2023-06-05,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),595,2023-06-06,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),596,2023-06-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),597,2023-06-08,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),598,2023-06-09,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),599,2023-06-13,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),600,2023-06-14,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),601,2023-06-15,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),602,2023-06-16,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),603,2023-06-20,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),604,2023-06-21,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),605,2023-06-22,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),607,2023-06-26,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),611,2023-06-30,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.50),656,2023-09-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),533,2023-03-03,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),534,2023-03-06,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),535,2023-03-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),536,2023-03-08,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),581,2023-05-16,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),582,2023-05-17,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),583,2023-05-18,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),586,2023-05-24,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),587,2023-05-25,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),590,2023-05-30,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),591,2023-05-31,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),592,2023-06-01,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),593,2023-06-02,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),594,2023-06-05,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),595,2023-06-06,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),596,2023-06-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),597,2023-06-08,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),598,2023-06-09,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),599,2023-06-13,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),600,2023-06-14,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),601,2023-06-15,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),602,2023-06-16,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),603,2023-06-20,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),604,2023-06-21,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),605,2023-06-22,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),607,2023-06-26,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),611,2023-06-30,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=0.75),656,2023-09-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),533,2023-03-03,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),534,2023-03-06,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),535,2023-03-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),536,2023-03-08,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),581,2023-05-16,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),582,2023-05-17,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),583,2023-05-18,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),586,2023-05-24,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),587,2023-05-25,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),590,2023-05-30,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),591,2023-05-31,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),592,2023-06-01,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),593,2023-06-02,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),594,2023-06-05,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),595,2023-06-06,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),596,2023-06-07,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),597,2023-06-08,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),598,2023-06-09,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),599,2023-06-13,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),600,2023-06-14,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),601,2023-06-15,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),602,2023-06-16,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),603,2023-06-20,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),604,2023-06-21,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),605,2023-06-22,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),607,2023-06-26,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),611,2023-06-30,infeasible,3,infeasible
+2-WDRO-Markowitz (eps=1.00),656,2023-09-07,infeasible,3,infeasible
+1-WDRO-CVaR (eps=0.50),533,2023-03-03,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),534,2023-03-06,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),535,2023-03-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),536,2023-03-08,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),581,2023-05-16,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),582,2023-05-17,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),583,2023-05-18,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),586,2023-05-24,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),587,2023-05-25,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),590,2023-05-30,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),591,2023-05-31,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),592,2023-06-01,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),593,2023-06-02,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),594,2023-06-05,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),595,2023-06-06,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),596,2023-06-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),597,2023-06-08,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),598,2023-06-09,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),599,2023-06-13,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),600,2023-06-14,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),601,2023-06-15,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),602,2023-06-16,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),603,2023-06-20,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),604,2023-06-21,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),605,2023-06-22,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),607,2023-06-26,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),611,2023-06-30,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.50),656,2023-09-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),533,2023-03-03,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),534,2023-03-06,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),535,2023-03-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),536,2023-03-08,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),581,2023-05-16,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),582,2023-05-17,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),583,2023-05-18,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),586,2023-05-24,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),587,2023-05-25,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),590,2023-05-30,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),591,2023-05-31,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),592,2023-06-01,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),593,2023-06-02,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),594,2023-06-05,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),595,2023-06-06,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),596,2023-06-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),597,2023-06-08,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),598,2023-06-09,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),599,2023-06-13,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),600,2023-06-14,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),601,2023-06-15,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),602,2023-06-16,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),603,2023-06-20,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),604,2023-06-21,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),605,2023-06-22,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),607,2023-06-26,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),611,2023-06-30,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=0.75),656,2023-09-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),533,2023-03-03,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),534,2023-03-06,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),535,2023-03-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),536,2023-03-08,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),581,2023-05-16,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),582,2023-05-17,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),583,2023-05-18,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),586,2023-05-24,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),587,2023-05-25,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),590,2023-05-30,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),591,2023-05-31,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),592,2023-06-01,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),593,2023-06-02,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),594,2023-06-05,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),595,2023-06-06,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),596,2023-06-07,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),597,2023-06-08,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),598,2023-06-09,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),599,2023-06-13,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),600,2023-06-14,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),601,2023-06-15,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),602,2023-06-16,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),603,2023-06-20,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),604,2023-06-21,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),605,2023-06-22,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),607,2023-06-26,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),611,2023-06-30,inf_or_unbd,4,inf_or_unbd
+1-WDRO-CVaR (eps=1.00),656,2023-09-07,inf_or_unbd,4,inf_or_unbd
+2-WDRO-CVaR (eps=0.50),533,2023-03-03,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),534,2023-03-06,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),535,2023-03-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),536,2023-03-08,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),581,2023-05-16,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),582,2023-05-17,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),583,2023-05-18,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),586,2023-05-24,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),587,2023-05-25,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),590,2023-05-30,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),591,2023-05-31,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),592,2023-06-01,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),593,2023-06-02,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),594,2023-06-05,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),595,2023-06-06,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),596,2023-06-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),597,2023-06-08,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),598,2023-06-09,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),599,2023-06-13,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),600,2023-06-14,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),601,2023-06-15,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),602,2023-06-16,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),603,2023-06-20,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),604,2023-06-21,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),605,2023-06-22,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),607,2023-06-26,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),611,2023-06-30,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.50),656,2023-09-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),533,2023-03-03,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),534,2023-03-06,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),535,2023-03-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),536,2023-03-08,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),581,2023-05-16,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),582,2023-05-17,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),583,2023-05-18,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),586,2023-05-24,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),587,2023-05-25,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),590,2023-05-30,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),591,2023-05-31,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),592,2023-06-01,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),593,2023-06-02,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),594,2023-06-05,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),595,2023-06-06,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),596,2023-06-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),597,2023-06-08,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),598,2023-06-09,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),599,2023-06-13,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),600,2023-06-14,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),601,2023-06-15,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),602,2023-06-16,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),603,2023-06-20,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),604,2023-06-21,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),605,2023-06-22,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),607,2023-06-26,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),611,2023-06-30,infeasible,3,infeasible
+2-WDRO-CVaR (eps=0.75),656,2023-09-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),533,2023-03-03,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),534,2023-03-06,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),535,2023-03-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),536,2023-03-08,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),581,2023-05-16,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),582,2023-05-17,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),583,2023-05-18,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),586,2023-05-24,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),587,2023-05-25,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),590,2023-05-30,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),591,2023-05-31,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),592,2023-06-01,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),593,2023-06-02,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),594,2023-06-05,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),595,2023-06-06,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),596,2023-06-07,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),597,2023-06-08,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),598,2023-06-09,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),599,2023-06-13,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),600,2023-06-14,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),601,2023-06-15,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),602,2023-06-16,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),603,2023-06-20,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),604,2023-06-21,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),605,2023-06-22,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),607,2023-06-26,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),611,2023-06-30,infeasible,3,infeasible
+2-WDRO-CVaR (eps=1.00),656,2023-09-07,infeasible,3,infeasible
